@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button, Form, Row, Col, Alert } from "react-bootstrap";
 // Custom hooks
 import useCategorias from "../hooks/useCategorias";
+import useBebidas from "../hooks/useBebidas";
 
 const Formulario = () => {
   // State para manejar los datos del formulario
@@ -17,7 +18,10 @@ const Formulario = () => {
   // Accediendo a los valores del contexto de categorias por medio del custom hook useCategorias
   const { categorias } = useCategorias();
 
-  //
+  // Accediendo a los valores del contexto de bebidas por medio del custom hook useBebidas
+  const { consultarBebidas, bebidas } = useBebidas();
+
+  // Funcion que valida y consulta la data
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -28,6 +32,9 @@ const Formulario = () => {
     }
 
     setAlerta();
+
+    // Consultando las bebidas
+    consultarBebidas(busqueda);
   };
 
   return (
