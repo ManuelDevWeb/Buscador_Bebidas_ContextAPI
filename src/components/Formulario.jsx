@@ -19,7 +19,7 @@ const Formulario = () => {
   const { categorias } = useCategorias();
 
   // Accediendo a los valores del contexto de bebidas por medio del custom hook useBebidas
-  const { consultarBebidas, bebidas } = useBebidas();
+  const { consultarBebidas } = useBebidas();
 
   // Funcion que valida y consulta la data
   const handleSubmit = (e) => {
